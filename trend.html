@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trends list</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <!-- import vue -->
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <!-- import CSS stylesheet -->
+    <script src="https://kit.fontawesome.com/4a404ff615.js" crossorigin="anonymous"></script>
+    <!-- import fontawesome icons -->
+</head>
+
+<body>
+    <div id="app">
+        <navigation></navigation>
+
+        <h1 id="trends_heading">Latest Trends List</h1>
+        <div id="trends_container">
+            <ul id="trends_ul">
+                <!-- unordered list of trend links, links are dynamically rendered with v-for -->
+                <trend-link v-for="trend in trend_links" :key="trend.name" v-bind:name="trend.name" v-bind:link="trend.link"></trend-link>
+            </ul>
+            <div id="trends_img_container"><img id="trends_image" src="images/clothes.jpg"></div>
+        </div>
+    </div>
+    <script>
+        var trendLink = { //local component representing a trend link in the unordered list
+            props: {
+                name: String, //displayed text
+                link: String //hyperlink to the company's website
+            },
+            template: '<li class="trends_link"><a :href="link" target="_blank">{{name}}</a></li>'
+        }
+        Vue.component('navigation', { //global component representing the navigation bar at the top of the page
+            template: ' \
+            <nav> \
+                <div id="nav-left"> \
+                    <!-- links on the left side of the site icon -->\
+                    <a class="sign_out" href="homepage.html"><i class="fa fa-sign-out"></i>Sign out</a> \
+                    <a class="home" href="index.html"><i class="fas fa-home"></i> Home</a> \
+                    <a class="trends" href="trend.html"><i class="fa fa-line-chart"></i> Latest Trends</a> \
+                </div> \
+                <div id="nav-center"> \
+                    <!-- site icon in the center -->\
+                    <p id="icon" style="font-size: 25px">United We Shop!</p> \
+                </div> \
+                <div id="nav-right"> \
+                    <!-- link on the right side of the site icon -->\
+                    <a href="search.html"><i class="fa fa-search"></i> Search your Favourite Brands</a> \
+                </div> \
+            </nav> '
+        })
+        var app = new Vue({ //root Vue instance
+            el: "#app",
+            data: {
+                trend_links: [{ //array of objects containing the trend links' data
+                    name: "Amazon",
+                    link: "https://www.amazon.in"
+                }, {
+                    name: "Flipkart",
+                    link: "https://www.flipkart.com"
+                }, {
+                    name: "Shein",
+                    link: "https://www.shein.in"
+                }, {
+                    name: "Armani",
+                    link: "https://www.armani.com"
+                }, {
+                    name: "Gucci",
+                    link: "https://www.gucci.com"
+                }, {
+                    name: "Myntra",
+                    link: "https://www.myntra.com"
+                }, {
+                    name: "Ajio",
+                    link: "https://www.ajio.com"
+                }, {
+                    name: "FirstCry",
+                    link: "https://www.firstcry.com"
+                }]
+            },
+            components: {
+                "trend-link": trendLink //the treandLink component is a child of the root component
+            }
+        })
+    </script>
+</body>
+
+</html>
