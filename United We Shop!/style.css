@@ -1,0 +1,432 @@
+/* set default font weight, size and color for all elements */
+
+* {
+    font-weight: 600;
+    font-size: 15.7px;
+    color: black;
+}
+
+
+/* default styles for each page's body container */
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: scroll;
+    background-color: #2abadeba;
+    padding: 0;
+    margin: 0;
+    font-family: Times New Roman, Times, serif;
+}
+
+a {
+    font-family: monospace;
+    font-size: 18px;
+}
+
+
+/* start home page */
+
+
+/* navigation container, all pages except login have the same nav bar */
+
+nav {
+    font-size: 12px;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-grow: 1;
+    background: #2abadeba;
+    margin-top: 0%;
+    box-shadow: 0px 5px 4px #2abadeba;
+    align-items: center;
+}
+
+
+/* left side of nav has the sign out, home, and latest trends links */
+
+#nav-left {
+    width: 40%;
+    text-align: center;
+}
+
+#nav-left a {
+    padding-left: 20px;
+}
+
+
+/* center of nav has the site icon */
+
+#nav-center {
+    width: 20%;
+    text-align: center;
+}
+
+
+/* right side of nav has the search page link */
+
+#nav-right {
+    width: 40%;
+    text-align: center;
+}
+
+
+/* container for the main content on the home page */
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+}
+
+#container img {
+    width: 160px;
+    height: 180px;
+}
+
+
+/* column titles */
+
+.title {
+    background: #2abadeba;
+    box-shadow: 0px 0px 4px #000000;
+}
+
+
+/* containers for the home page content columns */
+
+#column_content {
+    margin-top: 10px;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+/* section of the content, represents one brand/celebrity/attire */
+
+#column_section {
+    width: 15%;
+    border: 1px solid;
+    margin: 2px;
+    height: 90%;
+    box-shadow: 5px 10px 40px 2px #000000(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background: #2abadeba;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+/* top brands column */
+
+#top_brands {
+    grid-column: 1;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 20fr;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#top_brands .title {
+    grid-row: 1;
+}
+
+#top_brands .items {
+    grid-row: 2;
+    padding-bottom: 20px;
+}
+
+#top_brands .items img {
+    width: 220px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* celebrity looks column */
+
+#celebrity_looks {
+    grid-column: 2;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 20fr;
+    text-align: center;
+}
+
+#celebrity_looks .title {
+    grid-row: 1;
+}
+
+#celebrity_looks .items {
+    grid-row: 2;
+    padding-bottom: 20px;
+}
+
+#celebrity_looks .items img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* attires column */
+
+#attires {
+    grid-column: 3;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 20fr;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#attires .title {
+    grid-row: 1;
+}
+
+#attires .items {
+    grid-row: 2;
+    padding-bottom: 20px;
+}
+
+#attires .items img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* end home page */
+
+
+/* start trends page */
+
+#trends_container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#trends_container * {
+    box-sizing: border-box;
+}
+
+#trends_heading {
+    background-color: #9931CC;
+    font-size: 50px;
+    text-align: center;
+    margin: 20px 10% 20px 10%;
+    padding: 10px 40px 10px 40px;
+}
+
+#trends_ul {
+    padding-inline-start: 40px;
+    color: white;
+    float: left;
+    flex: 50%;
+}
+
+.trends_link {
+    /* for the trend link dot points */
+    color: #dddddd;
+}
+
+.trends_link a {
+    /* for the trend link text */
+    font-size: 30px;
+}
+
+#trends_image_container {
+    flex: 50%;
+}
+
+#trends_image {
+    float: right;
+    width: 500px;
+}
+
+
+/* end trends page */
+
+
+/* start search page */
+
+#search_form {
+    background-color: #9932CC;
+    width: 60%;
+    height: 44px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#search_query {
+    /* for the search text input */
+    all: unset;
+    font: 16px system-ui;
+    height: 100%;
+    width: 100%;
+    padding: 6px 10px;
+}
+
+#search_button {
+    all: unset;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+}
+
+#search_button i {
+    /* for the search button's icon */
+    color: #fff;
+    fill: currentColor;
+    width: 24px;
+    height: 24px;
+    padding: 10px;
+    font-size: 25px;
+}
+
+#search_img {
+    width: 60%;
+}
+
+
+/* end search page */
+
+
+/* start login page */
+
+.login_container {
+    width: 300px;
+    overflow: hidden;
+    margin: auto;
+    padding: 100px;
+    background: #9932CC;
+    border-radius: 30px;
+    display: block;
+}
+
+.login_heading {
+    text-align: center;
+    font-size: 30px;
+}
+
+.login_label b {
+    /* for the text above the login inputs */
+    font-size: 20px;
+    color: #ffffff;
+}
+
+#Uname {
+    /* for the username field */
+    width: 200px;
+    height: 30px;
+    border: 3px;
+    padding-left: 15px;
+    display: block;
+    margin-top: 10px;
+    background-color: #d3d3d3;
+}
+
+#Pass {
+    /* for the password field */
+    width: 200px;
+    height: 30px;
+    border: 3px;
+    padding-left: 15px;
+    display: block;
+    margin-top: 10px;
+    background-color: #d3d3d3;
+}
+
+#log {
+    /* for the login button */
+    width: 300px;
+    height: 30px;
+    border: 10px;
+    padding-left: 20px;
+    color: black;
+    display: block;
+    background-color: #d3d3d3;
+}
+
+#login_form span {
+    /* for the "remember me" text */
+    color: blue;
+    font-size: 30px;
+}
+
+@media screen and (max-width: 770px) {
+    /* media query for tabet-sized screens */
+    /* changes the layout of the left side of the navigation bar
+       so that the links are displayed in two rows to better fit on a smaller screen */
+    #nav-left {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+    .sign_out {
+        grid-row: 1;
+    }
+    .home {
+        grid-row: 1;
+    }
+    .trends {
+        grid-row: 2;
+        grid-column: 1 / span 2;
+    }
+    a,
+    i {
+        /* makes the font size of the navigation bar links and their icons smaller to better fit on a smaller screen */
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    /* media query for phone-sized screens */
+    nav {
+        /* makes the navigation bar taller */
+        height: 20%;
+    }
+    .trends {
+        margin-top: 5px;
+    }
+    #container img {
+        /* makes the images on the homepage the same width and height */
+        width: 80%;
+        height: 100px;
+    }
+    #top_brands,
+    #celebrity_looks,
+    #attires {
+        /* removes the padding between homepage the columns and between the columns and their titles */
+        padding: 0;
+    }
+    .column_content {
+        /* adds a border to the homepage colums because they are no longer separated with padding */
+        border: 1px solid black;
+    }
+    #icon {
+        font-size: 20px;
+    }
+    a,
+    i {
+        /* further decreases the font size of the links and icons on the navigation bar */
+        font-size: 12px;
+    }
+    .title {
+        /* makes the column titles on the homepage take up 10% of their container's height because some titles will take up multiple lines on phone-sized screens*/
+        height: 10%;
+    }
+    .column_content {
+        /* makes the columns take up the remaining 90% of their container's height */
+        height: 90%
+    }
+}
